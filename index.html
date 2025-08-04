@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mi Fokin Maquina</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- Message box -->
+  <div id="message-box" class="message-box">
+    🐻 nunca te rindas osito &lt;3
+  </div>
+
+  <!-- START SCREEN -->
+  <section id="start-screen" class="screen active">
+    <h1 class="pixel-header start-header">
+      Que hara la fokin makina del chambeo hoy?
+    </h1>
+    <button id="start-btn" class="pixel-button start-button">START</button>
+  </section>
+
+  <!-- DAY SELECTION SCREEN -->
+  <section id="day-screen" class="screen">
+    <h1 class="pixel-header">SELECCIONA EL DÍA</h1>
+    <div id="day-list" class="day-list"></div>
+  </section>
+
+  <!-- SCHEDULE SCREEN -->
+  <section id="schedule-screen" class="screen">
+    <input type="date" id="date-picker" class="date-picker" />
+
+    <h1 id="schedule-header" class="pixel-header"></h1>
+    <div id="hour-container" class="hour-list"></div>
+    <div class="schedule-controls">
+      <button id="back-btn"  class="pixel-button control-button">VOLVER</button>
+      <button id="clear-btn" class="pixel-button control-button">CLEAR</button>
+      <button id="complete-btn" class="pixel-button control-button">COMPLETE</button>
+    </div>
+  </section>
+
+  <!-- FINAL SCREEN -->
+  <section id="final-screen" class="screen">
+    <h1 class="pixel-header final-header">
+      ALL DONE MI FOKIN MAKINA, TE AMO
+    </h1>
+    <button id="final-restart-btn" class="pixel-button control-button">
+      RESTART
+    </button>
+  </section>
+
+  <!-- ACTION MENU -->
+  <div id="action-menu" class="action-menu"></div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

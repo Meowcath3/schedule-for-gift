@@ -1,0 +1,118 @@
+/* Base styling */
+@font-face {
+    font-family: 'Fira Code';
+    src: url('/static/fonts/FiraCode-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    font-family: 'Fira Code', monospace !important;
+    background-color: #c8d6e5; /* pastel light blue */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Glitter animation container */
+#glitter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+    z-index: 1;
+}
+
+/* Glitter particle style */
+.glitter-dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: sparkle 2s linear infinite;
+}
+
+@keyframes sparkle {
+    0% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Title */
+.schedule h1 {
+    color: #c71585; /* Medium Violet Red */
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+/* Layout of days */
+.days {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual day box */
+.day {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f7d794;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Day headers */
+.day h2 {
+    font-family: 'Monaco', monospace !important;
+    color: #f78fb3;
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Hour boxes */
+.hour-box {
+    font-family: 'Monaco', monospace !important;
+    background-color: #c8d6e5;
+    color: #333;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.hour-box:hover {
+    background-color: #ff9ff3;
+    transform: translateY(-2px);
+}
+
+/* Completed task */
+.hour-box[data-completed="true"] {
+    background-color: #fff9b0;
+    text-decoration: line-through;
+    opacity: 0.8;
+    color: #666;
+}
